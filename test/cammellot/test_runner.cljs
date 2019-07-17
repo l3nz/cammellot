@@ -2,8 +2,8 @@
 (ns cammellot.test-runner
   (:require
     ;; require all the namespaces that you want to test
-    [cammellot.core-test]
-    [figwheel.main.testing :refer [run-tests-async]]))
+   [cammellot.core-test]
+   [figwheel.main.testing :refer [run-tests-async]]))
 
 (defn -main [& args]
   (run-tests-async 5000))

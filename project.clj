@@ -12,12 +12,14 @@
 
   :source-paths ["src"]
 
-  :aliases {"fig"       ["trampoline" "run" "-m" "figwheel.main"]
+  :plugins [[lein-cljfmt "0.6.4"]]
+
+  :aliases {"fix" ["cljfmt" "fix"]
+            "fig"       ["trampoline" "run" "-m" "figwheel.main"]
             "fig:build" ["trampoline" "run" "-m" "figwheel.main" "-b" "dev" "-r"]
             "fig:min"   ["run" "-m" "figwheel.main" "-O" "advanced" "-bo" "dev"]
             "fig:test"  ["run" "-m" "figwheel.main" "-co" "test.cljs.edn" "-m" cammellot.test-runner]}
 
   :profiles {:dev {:dependencies [[com.bhauman/figwheel-main "0.1.9"]
-                                  [com.bhauman/rebel-readline-cljs "0.1.4"]]
-                   }})
+                                  [com.bhauman/rebel-readline-cljs "0.1.4"]]}})
 
