@@ -2,7 +2,8 @@
   (:require
    [goog.dom :as gdom]
    [reagent.core :as reagent :refer [atom]]
-   [cammellot.grafica :as G]))
+   [cammellot.grafica :as G]
+   [cammellot.modello :as M]))
 
 
 ;; define your app data so that it doesn't get over-written on reload
@@ -15,14 +16,16 @@
 
 (defn cammellot []
   [:div
-   [:h1 "Benvenuti a Cammellotx!"]
+   [:h1 "Benvenuti a Cammellot!"]
 
    [:div {:class "flex-container"}
 
-    (G/mostra-terra @app-state)
-    (G/mostra-persone @app-state)
-    (G/mostra-varie @app-state)
-    (G/mostra-azioni @app-state)]])
+    (G/mostra-terra app-state)
+    (G/mostra-persone app-state)
+    (G/mostra-varie app-state)
+    (G/mostra-azioni app-state)]
+
+   [:div (str "Stato: " @app-state)]])
 
 (defn mount [el]
   (reagent/render-component [cammellot] el))
