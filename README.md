@@ -6,6 +6,11 @@ FIXME: Write a one-line description of your library/project.
 
 FIXME: Write a paragraph about the library/project and highlight its goals.
 
+## TODO
+
+- Run tests automatically
+
+
 ## Development
 
 To get an interactive development environment run:
