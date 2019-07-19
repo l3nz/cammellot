@@ -8,6 +8,8 @@
 
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.10.339"]
+                 [org.clojure/spec.alpha "0.1.143"]
+                 [orchestra "2018.12.06-2"]
                  [reagent "0.8.1"]]
 
   :source-paths ["src"]

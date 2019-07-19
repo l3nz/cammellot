@@ -1,6 +1,6 @@
 (ns cammellot.core-test
   (:require
-   [cljs.test :refer-macros [deftest is testing]]
+   [cljs.test :refer-macros [deftest is are testing]]
    [cammellot.core :refer []]))
 
 ;(deftest multiply-test

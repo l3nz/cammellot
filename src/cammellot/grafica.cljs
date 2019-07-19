@@ -1,5 +1,7 @@
 (ns cammellot.grafica
-  (:require [cammellot.modello :as M]))
+  (:require [cammellot.modello :as M]
+            [orchestra-cljs.spec.test :as orchestra]
+            [clojure.spec.alpha :as s]))
 
 (defn mostra-terra [s]
 
@@ -32,6 +34,4 @@
             :on-click
             #(swap! s M/avanza-anno)}]])
 
-
-
-
+(orchestra/instrument)

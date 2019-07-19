@@ -1,15 +1,16 @@
 (ns ^:figwheel-hooks cammellot.core
   (:require
    [goog.dom :as gdom]
-   [reagent.core :as reagent :refer [atom]]
+   [reagent.core :as reagent]
+
    [cammellot.grafica :as G]
-   [cammellot.modello :as M]))
+   [cammellot.modello :as M]
+   [cammellot.cfg :as CFG]
+   [cammellot.specs :as S]))
 
 
 ;; define your app data so that it doesn't get over-written on reload
 
-
-(defonce app-state (atom {}))
 
 (defn get-app-element []
   (gdom/getElement "app"))
@@ -20,12 +21,12 @@
 
    [:div {:class "flex-container"}
 
-    (G/mostra-terra app-state)
-    (G/mostra-persone app-state)
-    (G/mostra-varie app-state)
-    (G/mostra-azioni app-state)]
+    (G/mostra-terra CFG/app-state)
+    (G/mostra-persone CFG/app-state)
+    (G/mostra-varie CFG/app-state)
+    (G/mostra-azioni CFG/app-state)]
 
-   [:div (str "Stato: " @app-state)]])
+   [:div (str "Stato: " @CFG/app-state)]])
 
 (defn mount [el]
   (reagent/render-component [cammellot] el))
