@@ -25,7 +25,37 @@
 (s/def ::campo (s/keys :req-un [::coltura]))
 (s/def ::campi (s/coll-of ::campo))
 
-(s/def :anno int?)
+
+;
+; Un granaio
+;
+
+
+(s/def ::capacita int?)
+(s/def ::contenuto int?)
+
+(s/def ::granaio (s/keys :req-un [::id ::capacita ::contenuto]))
+(s/def ::granai (s/coll-of ::granaio))
+
+
+;
+;
+;
+
+
+(s/def ::ftr-coltivazione float?)
+(s/def ::ftr-fertilita float?)
+
+;
+; Stato generale
+;
+
+(s/def ::anno int?)
+
+(s/def ::stato (s/keys :req-un [::anno
+                                ::ftr-coltivazione
+                                ::ftr-fertilita
+                                ::campi ::persone ::granai]))
 
 (orchestra/instrument)
 
